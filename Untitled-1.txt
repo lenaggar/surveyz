@@ -1,0 +1,9 @@
+TO DO:
+  • Realtek Semiconductor Corp. - Net - 5/3/2017 12:00:00 AM - 2023.54.331.2017.
+  • 2017-06 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB4022715).
+
+DONE:
+  • Microsoft .NET Framework 4.7 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB3186568).
+  • 2017-06 Update for Windows 10 Version 1607 for x64-based Systems (KB3150513).
+  • 2017-06 Update for Windows 10 Version 1607 for x64-based Systems (KB4023834).
+  • 2017-06 Security Update for Adobe Flash Player for Windows 10 Version 1607 for x64-based Systems (KB4022730).
