@@ -25,11 +25,11 @@ export default class CreateSurveyContainer extends Component {
       headers: { 'Content-Type': 'application/json' },
       data: newSurvey
     })
-    .then(response => response.data)
-    .then(response => {
-      console.log(response.message)
-      hashHistory.push('/surveys')
-    })
+      .then((response) => response.data)
+      .then((response) => {
+        console.log(response.message)
+        hashHistory.push('/surveys')
+      })
   }
 
   setSurvey () {

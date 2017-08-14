@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import dateformat from 'dateformat'
 import { TakeQuestion } from '../components'
-import { Container, Grid, Button, Divider, Segment, Header, Form } from 'semantic-ui-react'
+import { Container, Grid, Segment, Header, Form } from 'semantic-ui-react'
 
 export default class TakeSurveyContainer extends Component {
   constructor (props) {
@@ -26,22 +26,22 @@ export default class TakeSurveyContainer extends Component {
 
   getSurvey (id) {
     axios.get(`http://localhost:7000/surveys/${id}`)
-    .then(response => response.data)
-    .then(survey => {
-      this.setState({ ...survey, isLoading: false })
-      console.log(survey)
-    })
+      .then((response) => response.data)
+      .then((survey) => {
+        this.setState({ ...survey, isLoading: false })
+        console.log(survey)
+      })
   }
 
   deleteSurvey (id) {
     axios.delete(`http://localhost:7000/surveys/${id}`)
-    .then(response => response.data)
-    .then(response => {
-      this.setState({
-        surveys: this.state.surveys.filter(survey => survey._id !== id)
+      .then((response) => response.data)
+      .then((response) => {
+        this.setState({
+          surveys: this.state.surveys.filter((survey) => survey._id !== id)
+        })
+        console.log(response.message)
       })
-      console.log(response.message)
-    })
   }
 
   toggleLoading () {

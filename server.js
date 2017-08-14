@@ -6,7 +6,14 @@ import morgan from 'morgan'
 import dotenv from 'dotenv'
 
 // import Survey from './app/models/survey'
-import { getSurveys, getSurvey, postSurvey, deleteSurvey, postNewQuestion, postRespond } from './app/routes/Survey'
+import {
+  getSurveys,
+  getSurvey,
+  postSurvey,
+  deleteSurvey,
+  postNewQuestion,
+  postRespond
+} from './app/routes/Survey'
 
 const app = express()
 const port = process.env.PORT || 7000
@@ -40,29 +47,25 @@ app.use(express.static(path.join(__dirname, 'client/dist')))
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
   next()
 })
 
-app.route('/surveys')
-  .get(getSurveys)
-  .post(postSurvey)
+app.route('/surveys').get(getSurveys).post(postSurvey)
 
-app.route('/surveys/new-question')
-  .post(postNewQuestion)
+app.route('/surveys/new-question').post(postNewQuestion)
 
-app.route('/surveys/answers')
-  .post(postRespond)
+app.route('/surveys/answers').post(postRespond)
 
-app.route('/surveys/:id')
-  .get(getSurvey)
-  .delete(deleteSurvey)
+app.route('/surveys/:id').get(getSurvey).delete(deleteSurvey)
 
-app.route('*')
-  .get((req, res) => {
-    res.sendFile('index.html', { root: path.join(__dirname, 'client/dist') })
-  })
+app.route('*').get((req, res) => {
+  res.sendFile('index.html', { root: path.join(__dirname, 'client/dist') })
+})
 
 app.listen(port)
 
-console.log(` ~ listening on port ${port}...`)
+console.info(` ~ listening on port ${port}...`)
