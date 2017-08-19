@@ -1,6 +1,6 @@
 import About from './About'
 import Contact from './Contact'
-import Form from './Form'
+import SurveyForm from './SurveyForm'
 import Survey from './Survey'
 import SurveysListManager from './SurveysListManager'
 import Home from './Home'
@@ -13,7 +13,7 @@ import Welcome from './Welcome'
 export {
   About,
   Contact,
-  Form,
+  SurveyForm,
   Survey,
   SurveysListManager,
   Home,
